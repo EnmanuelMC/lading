@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link defer rel="stylesheet" href="index.css">
+  <title>obligatorio</title>
+</head>
+<style>
+  .container{
+    margin: 0 auto; 
+    width: 600px; 
+    height: 100%; 
+    background-color: grey;
+    position: relative;
+  }
+  .bolitauno{
+    background-color:red;
+    width: 100px; 
+    height: 250px;
+    position: absolute;
+     /* posicionar acoerde a container */
+   
+  }
+  .bolitados{
+    background-color:yellow;
+    width: 100px; 
+    height: 250px;
+    position: absolute;
+     /* posicionar acoerde a container */
+  }
+  .bolitatres{
+    background-color:blue;
+    width: 100px; 
+    height: 250px;
+    position: absolute;
+     /* posicionar acoerde a container */
+  }
+</style>
+<body style="height:1000px">
+  <div class="container">
+    <div class="bolitauno"></div>
+    <div class="bolitados"></div>
+    <div class="bolitatres"></div>
+  </div>
+  <script></script>
+  <script defer src="index.js">
+      function $(selector, node = document.body){
+        return node.querySelector(selector);
+      }
+
+
+      const bolitauno = $(".bolitauno")
+      const bolitados = $(".bolitados")
+      const bolitatres =  $(".bolitatres")
+
+      bolitados.style.backgroundColor = 'yellow'
+
+      window.addEventListener("scroll", (e) =>{
+        console.log(window.scrollY)
+        let scrollPosition = window.scrollY
+        bolitados.style.transform = 'translateY(' + scrollPosition * -1 + 'px)';
+        
+      })
+
+  </script>
+</body>
+</html>
+
